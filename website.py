@@ -1,4 +1,6 @@
 import requests
+import asyncio, aiohttp, json
+
 class Website:
     global website_dictionary
     website_dictionary = {'Bauhaus':'bauhaus.dk','Jem&Fix':'jemogfix.dk'}
