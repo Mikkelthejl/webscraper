@@ -33,7 +33,7 @@ class fetcher:
                     break
 
     async def process_item(session, item):
-        html_content = await fetch(session, item, return_type='text')
+        html_content = await fetcher.fetch(session, item, return_type='text')
         if len(html_content) < 10:
             return
 
