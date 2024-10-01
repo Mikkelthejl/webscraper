@@ -1,11 +1,13 @@
 import aiohttp
 import asyncio
 from website import Website
-from fetcher import fetch
-def main():
+from fetcher import fetcher
+async def main():
     async with aiohttp.ClientSession() as session:
         website = Website("Bauhaus")
-        site_response = await fetch(session,website.site,return_type='json')
-        print(site_response)
+        for element in website.sites:
+            page = f'{website.site}{element}'
+            site_response = await fetcher.find_items(session,page)
+            
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
