@@ -31,7 +31,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.9.12'
+        python-version: '3.x'
 
     # Install dependencies (assuming you have a requirements.txt)
     - name: Install dependencies
